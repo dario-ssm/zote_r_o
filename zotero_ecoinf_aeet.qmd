@@ -2,14 +2,13 @@
 title: "Seminario Zotero: Grupo de Ecoinformática (AEET)"
 title-slide-attributes:
     data-background-color: "darkcyan"
-
 author: "Darío San Segundo Molina"
 format: 
   revealjs:
       theme: solarized
       smaller: true
       transition: fade
-      incremental: true
+      incremental: false
       footer: "Seminario Ecoinformática (AEET)"
 editor: visual
 bibliography: references.bib
@@ -61,7 +60,7 @@ csl: ecosistemas.csl
 
 ::: columns
 ::: {.column width="30%"}
-![](images/Captura%20de%20pantalla%202023-02-06%20194723.jpg){width="262"}
+![](images/Captura%20de%20pantalla%202023-02-06%20194723.jpg){width="273"}
 :::
 
 ::: {.column width="70%"}
@@ -83,7 +82,7 @@ csl: ecosistemas.csl
 
 ::: columns
 ::: {.column width="70%"}
-### ![](images/image-546997007.png)
+![](images/image-546997007.png){width="1147"}
 :::
 
 ::: {.column width="30%"}
@@ -110,7 +109,7 @@ csl: ecosistemas.csl
 :::
 
 ::: {.column width="30%"}
-![](images/image-94392159.png){width="323"}
+![](images/image-94392159.png){width="317"}
 :::
 :::
 
@@ -168,7 +167,7 @@ Tras instalar los correspondientes plug-ins, se incluyen las citas en su lugar d
 
 #### c) Insertar bibliografía/referencias en Word/LibreOffice/GDocs
 
-Situando el cursor en la sección donde vayamos a redactar la bibliografía, clicamos en el botón ![](images/bibliography.png){width="30" height="30"} y comprobamos.
+Situando el cursor en la sección donde vayamos a redactar la bibliografía, clicamos en el botón ![](images/bibliography.png){width="40" height="43"} y comprobamos.
 
 *Nota*: En muchos casos los nombres científicos no están en cursiva en los títulos, para poner los nombres en cursiva hay que añadir al inicio y al final del nombre:
 
@@ -194,7 +193,7 @@ Es mucho más fácil con *visual editing mode* que se incluye en las versiones R
 
     -   `csl: ecosistemas.csl` : debemos descargar el archivo .csl de nuestro estilo de citatión deseado (en este caso, el de Ecosistemas) y debemos alojarlo en la carpeta del projecto en la que esté el `.Rmd/.qmd` .
 
-    ## \## ![](images/image-134112571.png){width="652"}
+![](images/image-134112571.png){width="652"}
 
 ------------------------------------------------------------------------
 
@@ -210,7 +209,7 @@ Es mucho más fácil con *visual editing mode* que se incluye en las versiones R
 
 ## Extra: Sci-Hub + Zotero
 
-Recientemente @willis2022 ha creado una herramienta en [este repositorio](https://github.com/ethanwillis/zotero-scihub) que permite instalar un *add-on* en Zotero que lo conecta automáticamente a Sci-Hub. Esto tiene varias utilidades:
+-   Recientemente @willis2022 ha creado una herramienta en [este repositorio](https://github.com/ethanwillis/zotero-scihub) que permite instalar un *add-on* en Zotero que lo conecta automáticamente a Sci-Hub. Esto tiene varias utilidades:
 
 -   **Ciencia Abierta**: Permite descargar vía [Sci-Hub](https://sci-hub.ru/) cualquier artículo disponible en la plataforma sin tener que copiar DOIs ni similares simplemente clickando en el botón de Zotero de tu navegador directamente desde la web de la revista.
 
@@ -224,8 +223,8 @@ Recientemente @willis2022 ha creado una herramienta en [este repositorio](https:
 ::: {.column width="60%"}
 ![](images/image-461518709.png)
 :::
-
 :::
+
 ## Extra: ZotFile: unlimited synch
 
 -   En su web personal, @kashnitsky2019 explica cómo esquivar el límite de 300MB de archivosusando ZotFile y una nube de almacenamiento.
