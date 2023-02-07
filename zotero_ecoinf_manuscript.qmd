@@ -1,0 +1,228 @@
+---
+title: "Seminario Zotero (Ecoinformática AEET)"
+author: "Darío San Segundo Molina"
+email: "dario.san@uah.es"
+date: '2023-02-20'
+format: gfm
+editor: visual
+bibliography: references.bib
+csl: ecosistemas.csl
+---
+
+![](images/zotero_logo.png){width="400"}
+
+# 1. Prerrequisitos
+
+Se puede descargar desde esta [página](https://www.zotero.org/download/) desde la que además se puede descargar un conector de Zotero para Chrome/Firefox desde el que se pueden almacenar páginas webs, artículos, etc. Conviene [crearse una cuenta](https://www.zotero.org/user/register/) e instalar desde este momento el conector para Chrome o Firefox.
+
+También es necesario tener instaladas las últimas versiones de **R** y **RStudio**, especialmente para añadir las citas en RMarkdown fácilmente a través del *Visual Editing Mode*.
+
+# 2. Introducción al Curso
+
+### Necesidad de organizar la literatura y bibliografía:
+
+A menudo, las científicas manejamos una enorme cantidad de información bibliográfica. Nos enfrentamos a la necesidad de **organizar** nuestras referencias bibliográficas en distintas situaciones de nuestro día a día:
+
+-   **Necesidad de clasificar** referencias para redactar cada una de las partes de un *paper*.
+
+-   **Artículos que leemos casualmente** y que nos pueden ser útiles en un futuro o que, simplemente, no queremos perder en montañas de notas en el fondo de nuestra nube.
+
+-   **Retomar cuestiones ecológicas** de hace un tiempo que quedaron en el tintero.
+
+-   **Divergencias**: identificar qué *papers* más versátiles nos sirven para distintos temas o trabajos.
+
+-   **Convergencias**: aunar *papers* a los que llegamos por distintas vías y proyectos pero que nos sirven para un mismo marco teórico.
+
+-   **Elaborar bibliografías** : la más evidente. Emplear un gestor bibliográfico que podamos combinar con procesadores de texto, LaTeX o RMarkdown, entre otros, nos permite construir bibliografías de forma rápida y eficiente adaptándonos a los requisitos que nos pida la revista o la entidad en cuestión.
+
+-   **Colaborar científicamente** para hacer una ciencia colaborativa, en la que las distintas investigadoras podamos compartir entre nosotras de forma organizada y accesible nuestra maleta de referencias, emplear herramientas como *Zotero Groups* puede ser muy útil.
+
+### ¿Qué es Zotero y por qué utilizarlo frente a otros gestores? :
+
+-   **Software libre y de código abierto**: la comunidad amplía sus posibilidades cada día. Frente a Mendeley (propiedad de Elsevier), la comunidad de Zotero aspira a mejorar su utilidad cada día siempre de forma gratuita.
+
+-   **Gratuito hasta un límite** (300 Mb). Este límite solo afecta a la sincronización con el servidor de Zotero en la nube, pero en tu dispositivo puede superarse de forma ilimitada.
+
+    -   Con la extensión ZotFile, una nube de almacenamiento (ej. OneDrive, Google Drive o Mega) y un *set-up* rápido es posible la sincronización cuasi-ilimitada de archivos vía nube. Todas las instrucciones en @kashnitsky2019.
+
+    <!-- -->
+
+        -   Veremos después cómo queda tras esta configuración.
+
+-   **Extensión Plug-in para Chrome y Firefox:** se descarga [aquí](https://www.zotero.org/download/connectors).
+
+-   **Insertar citas bibliográficas en Google Docs, en Word y en LibreOffice:** los complementos se descargan automáticamente con el cliente de escritorio. También en *Herramientas \> Complementos \> configuración icono \> añadir desde archivo* para hacerlo manualmente con cualquier add-on.
+
+-   **Zotero - RStudio**: Es el único gestor bibliográfico por el momento que está integrado en RMarkdown, más allá de paquetes como `knitcitations`.
+
+![Figura 1. Cómo evitar la sincronización de archivos para evitar el límite de almacenamiento](images/zotero_config.png){width="450"}
+
+## **3. Interfaz de Zotero:**
+
+Es muy amigable e intuitiva. Se compone de varios elementos (Figura 1).
+
+-   **Barra de navegación:** situada a la izquierda , muestra nuestras carpetas o *colecciones* y *subcolecciones* (igual que cualquier clasificador de archivos). Incluye además una papelera, un cajón de sastre (con literatura sin clasificar), una carpeta de artículos propios , una de duplicados y una de artículos retirados. Algunas operaciones que permite realizar con click derecho:
+
+    -   Exportar a otros formatos (*csv, BibTeX, RefWorks, html, Wikipedia citations)* o en Zotero RDF.
+
+    -   Crear un informe (títulos, autoras, resúmenes y enlaces), útil para recomendar lecturas, para docencia o para ampliar información de bibliografía que nos pidan tras una charla, por ejemplos.
+
+    -   Crear bibliografía (no recomendable hacerlo desde aquí).
+
+-   **Panel de referencias**: situado en la parte central, nos permite seleccionar la referencia en la carpeta actual para operar con ella (mismas operaciones que para las carpetas de la barra de navegación) así como ordenarlas por título o autor. También permite descargar el pdf via **sci-hub** con el *add-on* instalado (se explica más abajo).
+
+-   **Panel de información:** situado en la parte derecha, tiene varias pestañas:
+
+    -   *Información*: con metadatos (editables) sobre el artículo. Normalmente solo habrá que editar aquellos que Zotero no detecte bien (blogs, algunos libros, etc), que guarda como *snapshot*.
+
+    -   *Notas*: si queremos anotar esa bibliografía, incorpora un miniprocesador de texto.
+
+    -   *Etiquetas:* muy útil para clasificar los artículos de nuestras bibliotecas y facilitar el flujo de trabajo, el acceso a referencias y la organización de nuestra literatura. Incluye las que vienen con el artículo predeterminadas y las que creamos nosotras.
+
+    -   *Relacionados:* nos permite conectar referencias de artículos que decidamos relacionar. Muy útil para facilitar la cohesión al redactar.
+
+-   **Búsquedas**: hay tres opciones:
+
+    -   *Búsqueda libre:* en la parte central-superior (Ctrl + F), para buscar dentro de la carpeta por autor o título.
+
+    -   *Búsqueda por etiqueta:* en la barra izquierda inferior, permite buscar una etiqueta en la carpeta seleccionada
+
+    -   *Búsqueda avanzada*: con todos los filtros posibles, en *Editar \> Búsqueda avanzada*. Se recomienda para búsquedas más profundas.
+
+![**Figura 2**. Interfaz de Zotero](images/zotero_interfaz.png)
+
+## **4. Cómo añadir referencias a Zotero**
+
+Hay varias formas de añadir referencias en Zotero:
+
+-   **Manualmente:** Seleccionando el tipo de documento que queremos añadir e introduciendo los datos en los distintos campos a mano. (No muy recomendable a no ser que sea estrictamente necesario). Una solución un poco *chaotic evil...*
+
+-   **Mediante identificadores:** Mediante el botón *varita mágica* se pueden añadir distintos elementos con el DOI, el ISBN, etc.
+
+-   **Extensiones de Chrome y Firefox:** Podemos incorporar un artículo, libro o cualquier otro formato desde la web de descarga del mismo (la de la revista), desde bases como Web of Science o incluso desde Sci-Hub. Para hacerlo, una vez instalado el conector plug-in en nuestro navegador:
+
+    1.  Abrimos Zotero en nuestro dispositivo.
+
+    2.  Seleccionamos la carpeta en la que queremos guardar la referencia. También se puede seleccionar la carpeta destino en el paso 3, pero si se hace lentamente se duplicará, así que mejor hacerlo de esta forma.
+
+    3.  En nuestro navegador, en la pestaña donde esté abierto el artículo (tengamos o no acceso a él), pulsamos el botón *Save to Zotero* de la barra de herramientas.
+
+        *Nota: conviene evitar pulsar el botón en la versión de acceso digital al artículo, pues a veces da error. Es mejor hacerlo en la web principal del artículo.*
+
+-   **Añadir desde un documento:** Se pueden añadir uno o varios documentos arrastrándolos desde una carpeta donde los tengamos guardados a Zotero.
+
+-   **Importar una bibliografía completa:** Se puede importar bibliografía desde otro gestor bibliográfica, desde una búsqueda que hayamos realizado (por ejemplo en Web of Science en formato .RDF) o para citar los paquetes de R que hayamos usado para nuestro manuscrito.
+
+## 5. Cómo escribir citas y bibliografías en Word, LibreOffice, Google Docs:
+
+#### **5.1. Descargar distintos estilos de citas**
+
+En primer lugar, es necesario escoger el estilo de citación que queramos. Hay un [repositorio de estilos de Zotero](https://www.zotero.org/styles) desde el que se pueden descargar distintos formatos en función de los estilos, distintos campos y/o el título de la publicación a la que queremos enviar nuestro manuscrito. ¡Actualmente hay más de 10000 estilos!
+
+También se pueden añadir de la misma forma desde la aplicación de escritorio de Zotero en *Editar \> Preferencias \> Citar \> Obtener estilos adicionales*
+
+Ejemplos:
+
+-   **Revista Ecosistemas**: descarga [aquí](https://www.zotero.org/styles?q=ecosistemas) desde el navegador. Se recomienda hacerlo así, ya que permite tanto añadirla a Zotero (aceptando el cuadro de diálogo emergente al clickar), si éste está abierto, como descargar el archivo *.csl* que necesitaremos para poder citar con RMarkdown. Para descargar el *.csl,* se puede o bien hacer click derecho y guardar como... o bien clickar en *cancelar* en el cuadro de diálogo emergente, descargándose el csl automáticamente sin añadir a Zotero el estilo. Desde el menú de Zotero no es posible descargar el *.csl.*
+
+-   **Science (without titles)** como [ejemplo](https://www.zotero.org/styles?q=science%20(without%20titles)) de citas numéricas y con títulos abreviados (ideal para informes, memorias, etc), o cualquier otro de la revista a la que nos dirijamos.
+
+#### 5.2. Añadir citas:
+
+**a) Word**: Al instalar este plug-in (Figura 3) se añade una nueva pestaña, llamada **Zotero**, entre la pestaña Vista y Ayuda. Abre una barra de herramientas con texto e iconos con las distintas opciones y la opción ![](images/add_citation.png){width="30"}
+
+![Figura 3. Instalación del complemento de Word y LibreOffice con zotero](images/zotero_word_install.png){width="400"}
+
+**b) LibreOffice**: Se añade una nueva barra de herramientas con iconos, siendo el de la izquierda el botón (![](images/add_citation-01.png){width="30"} que nos abrirá un cuadro de búsqueda de Zotero con autocompletado para buscar la referencia deseada.
+
+**c) Docs de Google Drive** (se instala automáticamente con el plug-in de Chrome/Firefox): Se añade una nueva pestaña, llamada **Zotero**, entre la pestaña Complementos y Ayuda. Abre una ventana con texto con las distintas opciones.
+
+Los iconos de Zotero son iguales (o muy parecidos) en Word y LibreOffice. En Docs de Google Drive hay un botón similar y un menú de Zotero (Figura 4). En todos ellos, la ventana desplegable para las citas tiene este aspecto:
+
+![Figura 4. Aspecto del botón de añadir cita de Google Docs](images/zotero_add_gdocs.png){width="300"}
+
+#### **5.3. Redactar la bibliografía**:
+
+Situando el cursor en la sección donde vayamos a redactar la bibliografía, clicamos en el botón ![](images/bibliography.png){width="30" height="30"} ![]() y comprobamos.
+
+-   *Nota*: En muchos casos los nombres científicos no están en cursiva en los títulos, para poner los nombres en cursiva hay que añadir al inicio y al final del nombre:
+
+        # <i>nombre de la especie</i>
+        # ejemplo: <i>Spodoptera frugiperda</i>
+
+Hay información más detallada sobre los estilos, otras opciones y botones adicionales en **LibreOffice** que se pueden consultar [aquí](https://www.zotero.org/support/libreoffice_writer_plugin_usage).
+
+## 6. Citas y bibliografía con RMarkdown
+
+Es mucho más fácil con *visual markdown editing mode* que se incluye en las versiones RStudio v1.4. y superiores. Es una manera mucho más amigable de usar Rmarkdown y que, además, lo traduce a código. Es necesario seguir varios pasos:
+
+1.  **Previo**:
+    -   Tener instalada la última versión de RStudio (facilita utilizar el Visual Mode de RMarkdown).
+
+    -   (recomendable, no obligatorio) instalar **BetterBibTeX** para Zotero (disponible [aquí](https://retorque.re/zotero-better-bibtex/installation/)).
+2.  **Modificar el YAML en RMarkdown**: es necesario añadir dos elementos
+    -   [`bibliography`]{style="color: cyan4"}`: references.bib` : es un apartado con la carpeta de bibliografía que se añade automáticamente al incorporar citas. Será siempre, en todos nuestros Rmds, igual.
+
+    -   `csl: ecosistemas.csl` : debemos descargar el archivo .csl de nuestro estilo de citatión deseado (en este caso, el de Ecosistemas) y debemos alojarlo en la carpeta del projecto en la que esté el .Rmd
+3.  **Añadir citas en el RMarkdown:** se hace clickando en *Insert \> Citation* o en el logo "*\@*". También se puede escribir "`@`" en el texto y usar el tabulador, pero es preferible hacerlo a través del botón, ya que permite añadir citas normales o incorporar la opción *in-text citation*. Ejemplo :
+-   *"Un buen código de programación en ciencia debería reunir tres objetivos: comunicación clara, formato unificado y abstracción"* [@filazzola2022].
+
+-   "*Según* @filazzola2022*, un buen código de programación en ciencia debería reunir tres elementos: comunicación clara, formato unificado y abstracción*".
+Si pulsas con el ratón encima de la cita recién añadida, en el Visual Mode Editing de RMarkdown se previsualiza cómo quedará referenciada en la bibliografía con el estilo de citación actual.
+
+Además, para citar paquetes de R, esta ventana incorpora a la izquierda una columna de R Package (ej. [@base; @rmarkdown; @RefManageR])
+
+3.  **Añadir bibliografíá:** Se añade automáticamente al final del documento al hacer el *knit.*
+
+-   *A tener en cuenta*: a veces las citas se desacompasan en el rmd y, de alguna forma, se pierde la conexción. En este caso, al hacer knit, aparecerán como elementos ajenos al texto y no se reflejarán en la bibliografía, por lo que habrá que corregirlas. Para evitar este problema, se pueden copiar-pegar las citas tras la primera aparición en el manuscrito o eliminar manualmente el sufijo pulsando en el lápiz que se ve en la Figura 6.
+
+## Extra: Sci-Hub + Zotero
+
+Recientemente @willis2022 ha creado una herramienta en [este repositorio](https://github.com/ethanwillis/zotero-scihub) que permite instalar un *add-on* en Zotero que lo conecta automáticamente a Sci-Hub. Esto tiene varias utilidades:
+
+-   **Ciencia Abierta**: Permite descargar vía Sci-Hub cualquier artículo disponible en la plataforma sin tener que copiar DOIs ni similares simplemente clickando en el botón de Zotero de tu navegador directamente desde la web de la revista.
+
+-   **Integrar lectura, anotacion y gestión bibliográfica:** en cualquier dispositivo se puede descargar un paper referenciado en una carpeta de zotero con un simple click derecho \> *Update SciHub* y anotarlo al instante con el lector integrado de Zotero.
+
+    Conviene desactivar la casilla predeterminada *Automatic PDF Download* del add-on en *Editar \> Preferencias* \> *SciHub* para que no se descarguen los archivos y se llene Zotero cada vez que incorporas una cita a tu biblioteca; si quieres descargar uno concreto, lo puedes hacer siempre con *click-derecho \> update scihub file*, si bien no siempre funciona en la app y a veces te redirige a la web de sci-hub.
+
+![](images/scihubz.png){width="400"}
+
+## Extra: ZotFile: unlimited synch
+
+-   En su web personal, @kashnitsky2019 explica cómo esquivar el límite de 300MB de archivosusando ZotFile y una nube de almacenamiento.
+
+-   Tras configurarlo siguiendo sus pasos: proponemos la siguiente rutina de trabajo:
+
+    1.  Conseguir el pdf del artículo (ej. vía sci-hub).
+
+    2.  Click derecho en la referencia de Zotero \> *Manage Attachments \> Rename & Move*
+
+    3.  Abrirlo con el visor de PDF de Zotero y anotar lo que queramos
+
+    4.  Pulsamos *Archivo \> Exportar PDF* y sobrescribimos el pdf con el mismo nombre en la carpeta sincronizada con nuestra nube... y ¡listo! ya tenemos todo el proceso integrado.
+## **Otros recursos:**
+
+[Guía similar a esta](https://bookdown.org/pdr_higgins/rmrwr/adding-citations-to-your-rmarkdown.html) [@higgins2022]
+
+[Cómo citar paquetes de R y modificar apéndices en la bibliografía](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) [@riederer]
+
+[Página con información sobre cómo utilizar Visual R Markdown](https://rstudio.github.io/visual-markdown-editing/).
+
+[Entrada de blog con instrucciones similares (profundiza en cómo añadir citas en R Markdown con comandos y paquetes)](https://www.anthonyschmidt.co/post/2021-10-25-a-zotero-workflow-for-r/)
+
+Editor de csl: <https://editor.citationstyles.org/about/>
+
+Paquete rbbt para un formato similar al de Word/LibreOffice: <https://github.com/paleolimbot/rbbt> explicado en el blog del autor @dunnington2020.
+
+Quarto-Zotero-Better BibTeX [aquí](https://community.rstudio.com/t/quarto-and-zotero-with-better-bibtex-will-it-be-improved/148462) y [aquí](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/24-citations/).
+
+Multitud de plug-ins con un gran abanico de funcionalidades: [https://www.zotero.org/support/plugins](https://www.zotero.org/support/pluginshttps://www.zotero.org/support/plugins)
+
+Y por si aún no te ha convencido, deja que [este vídeo](https://www.youtube.com/watch?v=jE83YERuwFQ) lo haga con la melodía de *Frozen.*
+
+## Agradecimientos:
+
+Especial mención para Loreto Martínez de Baroja Villalón por contribuir a la preparación del curso que inicialmente originó este taller. También al Comité Organizador del I Festival de la AEET por la organización de un espacio como este y el apoyo brindado.
+
+## Referencias:

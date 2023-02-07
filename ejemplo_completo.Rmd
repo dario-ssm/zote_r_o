@@ -1,0 +1,22 @@
+---
+title: "Ejemplo con referencias"
+author: "Darío San Segundo Molina (dario.san@uah.es)"
+date: '2022-05-13'
+output: html_document
+bibliography: references.bib
+csl: ecosistemas.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction:
+
+Ejemplo con modificaciones a partir de un párrafo de (<https://www.tandfonline.com/doi/full/10.1080/10691898.2019.1695554>).
+
+The R programming language ([citar a R!!](https://www.r-project.org/)) is one of the most popular means of introducing computing into data science, data analytics, and statistics curricula (<https://www.research.ed.ac.uk/en/publications/infrastructure-and-tools-for-teaching-computing-throughout-the-st>). An advantage of the R ecosystem is the powerful set of add-on packages that can be used to perform a range of tasks including data manipulation (<https://link.springer.com/chapter/10.1007/978-0-387-98141-3_9>), wrangling and visualization (<https://r4ds.had.co.nz/data-visualisation.html>) among others. Tidy tools may help smooth the workflow for data analysis (<https://peerj.com/preprints/3180/>). Finally, plenty of resources are available hosted on GitHub (e.g. Stan-based Bayesian modelling package *brms* on <https://github.com/paul-buerkner/brms>)
+
+While these packages make it possible for users of R to accomplish a wide range of tasks, it also means there are often multiple workflows for accomplishing the same data analytic goal. These competing workflows often lead to strong opinions and debates in the literature, on social media, and on blogs <https://mandymejia.com/2013/11/13/10-reasons-to-switch-to-ggplot-7/>; <https://almost-surely.netlify.com/posts/r-graphics-ggplot-vs-base/>]. One of the commonly debated aspects of data science education within the R community is the plotting system used to introduce students to statistical graphics. The GAISE report states that a primary goal of introductory classes is that students "should be able to produce graphical displays and numerical summaries and interpret what graphs do and do not reveal"(<https://commons.erau.edu/publication/1083/>).
+
+## References
