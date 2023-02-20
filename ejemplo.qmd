@@ -1,0 +1,18 @@
+---
+title: "ejemplo"
+format: html
+editor: visual
+bibliography: references.bib
+---
+
+## Citar con Zotero -- Quarto/RMarkdown y BibTeX
+
+-   *"Un buen código de programación en ciencia debería reunir tres objetivos: comunicación clara, formato unificado y abstracción"* (<https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13961>)
+
+-   "*Según* (<https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13961>)*, un buen código de programación en ciencia debería reunir tres elementos: comunicación clara, formato unificado y abstracción*".
+
+-   Además, para citar paquetes de R, esta ventana incorpora a la izquierda una columna de R Package (ej. *emmeans*, *nlme*, *here, R Core Team*).
+
+-   La bibliografía se añade automáticamente al final del documento
+
+## Referencias:
